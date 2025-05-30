@@ -7,7 +7,8 @@
 #include <glm/mat4x4.hpp>
  
 #include <iostream>
-
+#include <vulkan/vulkan.h>
+// This is a simple Vulkan application that initializes GLFW, creates a window, and checks for Vulkan extensions.
 int main() {
     glfwInit();
 
