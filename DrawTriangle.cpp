@@ -109,6 +109,7 @@ private:
 
 	VkRenderPass renderPass;
 	VkPipelineLayout pipelineLayout;
+	VkPipeline graphicsPipeline;
 
 	void initWindow() {
 		glfwInit();
@@ -138,6 +139,7 @@ private:
 	}
 
 	void cleanup() {
+		vkDestroyPipeline(device, graphicsPipeline, nullptr);
 		vkDestroyPipelineLayout(device, pipelineLayout, nullptr);
 		vkDestroyRenderPass(device, renderPass, nullptr);
 
@@ -599,6 +601,27 @@ private:
 		pipelineLayoutInfo.pPushConstantRanges = nullptr; // No push constants
 		if (vkCreatePipelineLayout(device, &pipelineLayoutInfo, nullptr, &pipelineLayout) != VK_SUCCESS) {
 			throw std::runtime_error("failed to create pipeline layout!");
+		}
+
+		VkGraphicsPipelineCreateInfo pipelineInfo{};
+		pipelineInfo.sType = VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO;
+		pipelineInfo.stageCount = 2; // Two shader stages
+		pipelineInfo.pStages = shaderStages; // Vertex and fragment shader stages
+		pipelineInfo.pVertexInputState = &vertexInputInfo; // Vertex input state
+		pipelineInfo.pInputAssemblyState = &inputAssembly; // Input assembly state
+		pipelineInfo.pViewportState = &viewportState; // Viewport state
+		pipelineInfo.pRasterizationState = &rasterizer; // Rasterization state
+		pipelineInfo.pMultisampleState = &multisampling; // Multisampling state
+		pipelineInfo.pColorBlendState = &colorBlending; // Color blending state
+		pipelineInfo.pDynamicState = &dynamicState; // Dynamic state
+		pipelineInfo.layout = pipelineLayout; // Pipeline layout
+		pipelineInfo.renderPass = renderPass; // Render pass
+		pipelineInfo.subpass = 0; // Subpass index
+		pipelineInfo.basePipelineHandle = VK_NULL_HANDLE; // No base pipeline
+		pipelineInfo.basePipelineIndex = -1; // No base pipeline index
+
+		if (vkCreateGraphicsPipelines(device, VK_NULL_HANDLE, 1, &pipelineInfo, nullptr, &graphicsPipeline) != VK_SUCCESS) {
+			throw std::runtime_error("failed to create graphics pipeline!");
 		}
 
 		vkDestroyShaderModule(device, vertShaderModule, nullptr);
