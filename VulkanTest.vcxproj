@@ -76,7 +76,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\VulkanSDK\1.4.313.1\Include;C:\Program Files\Microsoft Visual Studio\2022\Libraries\glfw-3.4.bin.WIN64\include;C:\Program Files\Microsoft Visual Studio\2022\Libraries\glm;C:\Program Files\Microsoft Visual Studio\2022\Libraries\stb-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\VulkanSDK\1.4.313.1\Include;C:\Program Files\Microsoft Visual Studio\2022\Libraries\glfw-3.4.bin.WIN64\include;C:\Program Files\Microsoft Visual Studio\2022\Libraries\glm;C:\Program Files\Microsoft Visual Studio\2022\Libraries\stb-master;C:\Program Files\Microsoft Visual Studio\2022\Libraries\tinyobjloader-release;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -94,7 +94,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\VulkanSDK\1.4.313.1\Include;C:\Program Files\Microsoft Visual Studio\2022\Libraries\glfw-3.4.bin.WIN64\include;C:\Program Files\Microsoft Visual Studio\2022\Libraries\glm;C:\Program Files\Microsoft Visual Studio\2022\Libraries\stb-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\VulkanSDK\1.4.313.1\Include;C:\Program Files\Microsoft Visual Studio\2022\Libraries\glfw-3.4.bin.WIN64\include;C:\Program Files\Microsoft Visual Studio\2022\Libraries\glm;C:\Program Files\Microsoft Visual Studio\2022\Libraries\stb-master;C:\Program Files\Microsoft Visual Studio\2022\Libraries\tinyobjloader-release;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -110,7 +110,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\VulkanSDK\1.4.313.1\Include;C:\Program Files\Microsoft Visual Studio\2022\Libraries\glfw-3.4.bin.WIN64\include;C:\Program Files\Microsoft Visual Studio\2022\Libraries\glm;C:\Program Files\Microsoft Visual Studio\2022\Libraries\stb-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\VulkanSDK\1.4.313.1\Include;C:\Program Files\Microsoft Visual Studio\2022\Libraries\glfw-3.4.bin.WIN64\include;C:\Program Files\Microsoft Visual Studio\2022\Libraries\glm;C:\Program Files\Microsoft Visual Studio\2022\Libraries\stb-master;C:\Program Files\Microsoft Visual Studio\2022\Libraries\tinyobjloader-release;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -128,7 +128,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\VulkanSDK\1.4.313.1\Include;C:\Program Files\Microsoft Visual Studio\2022\Libraries\glfw-3.4.bin.WIN64\include;C:\Program Files\Microsoft Visual Studio\2022\Libraries\glm;C:\Program Files\Microsoft Visual Studio\2022\Libraries\stb-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\VulkanSDK\1.4.313.1\Include;C:\Program Files\Microsoft Visual Studio\2022\Libraries\glfw-3.4.bin.WIN64\include;C:\Program Files\Microsoft Visual Studio\2022\Libraries\glm;C:\Program Files\Microsoft Visual Studio\2022\Libraries\stb-master;C:\Program Files\Microsoft Visual Studio\2022\Libraries\tinyobjloader-release;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -140,6 +140,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DrawTriangle.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
